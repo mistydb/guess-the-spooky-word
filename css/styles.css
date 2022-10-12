@@ -7,10 +7,10 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Creepster", cursive;
   font-style: normal;
-  font-size: 20px;
-  line-height: 150%;
+  font-size: 1.75em;
+  line-height: 1em;
   background-color: #dff6f6;
   background-image: url("../img/bg.png");
   background-size: 800px;
@@ -55,15 +55,15 @@ h1 {
   font-size: 1em;
 }
 
-.underline {
+/* .underline {
   border-bottom: 2px solid #fff;
   padding-bottom: 3px;
-}
+} */
 
 .word-in-progress {
-  letter-spacing: 15px;
+  letter-spacing: 0.5em;
   color: #28bdbd;
-  font-size: 30px;
+  font-size: 2em;
 }
 
 .guessed-letters {
