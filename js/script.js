@@ -20,7 +20,7 @@ let guessedLetters = [];
 let remainingGuesses = 8;
 
 const getWord = async function () {
-    const res = await fetch( "https://gist.githubusercontent.com/skillcrush-curriculum/7061f1d4d3d5bfe47efbfbcfe42bf57e/raw/5ffc447694486e7dea686f34a6c085ae371b43fe/words.txt")
+    const res = await fetch( "https://gist.githubusercontent.com/mistydb/67fcaa9a9fbb1770869ffb7d8e345955/raw/fa5383383b570dc6617a43c9c5eee51a53a47cec/spooky-words.txt")
     const words = await res.text();
     const wordArray = words.split("\n");
     const randomIndex = Math.floor(Math.random() * wordArray.length);
@@ -30,11 +30,8 @@ const getWord = async function () {
 getWord();
 
 const hideWord = function (word) {
-    const arrayWord = word.split("");
-    const hiddenWord = arrayWord.map(function (item) {
-        return `●`;
-    })
-    wordInProgress.innerText = hiddenWord.join("");
+    const hiddenWord = word.replace(/[a-zA-Z]/g, "👻")
+    wordInProgress.innerText = hiddenWord;
 };
 
 
@@ -53,11 +50,11 @@ guessButton.addEventListener("click", function (e) {
 const checkValidity = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
-        message.innerText = "Please enter a letter.";
+        message.innerText = "Please enter a letter. 🤡";
     } else if (input.length > 1) {
-        message.innerText = "Please enter only one letter.";
+        message.innerText = "Please enter only one letter. 🧛 One, ah ah ah ah.";
     } else if (!input.match(acceptedLetter)) {
-        message.innerText = "Please enter a letter from A to Z."
+        message.innerText = "Please enter a letter from A 👽 to Z 🧟."
     } else {
         return input;
     }
@@ -66,7 +63,7 @@ const checkValidity = function (input) {
 const makeGuess = function (letter) {
     letter = letter.toUpperCase();
     if (guessedLetters.includes(letter)) {
-        message.innerText = "You've already guessed that letter."
+        message.innerText = "You've already guessed that letter. ⚰️"
     } else {
         guessedLetters.push(letter);
         displayLetters();
@@ -93,7 +90,7 @@ const displayWordInProgress = function (guessedLetters) {
         if (guessedLetters.includes(letter)) {
             displayWIP.push(letter.toUpperCase());
         } else {
-            displayWIP.push("●");
+            displayWIP.push("👻");
         }
     } 
     wordInProgress.innerText = displayWIP.join("");
@@ -103,13 +100,13 @@ const displayWordInProgress = function (guessedLetters) {
 const checkGuessNumber = function (letter) {
     const wordUpper = word.toUpperCase();
     if (wordUpper.includes(letter)) {
-        message.innerText = `You guessed a letter!`;
+        message.innerText = `You guessed a letter! 🔮`;
     } else {
-        message.innerText = `Oops! The secret word does not contain that letter.`;
+        message.innerHTML = `🪦 Oops! 🪦 <p>The secret word does not contain that letter.</p>`;
         remainingGuesses = remainingGuesses - 1;
     }
     if (remainingGuesses === 0) {
-        message.innerText = `Sad trombone! Game over. The secret word was ${word.toUpperCase()}.`
+        message.innerHTML= `☠️ Game Over ☠️<p>The spooky word was ${word.toUpperCase()}.</p>`
         startOver();
     } else if (remainingGuesses === 1) {
         numGuesses.innerText = `only one guess`;
@@ -121,7 +118,7 @@ const checkGuessNumber = function (letter) {
 const checkIfWon = function () {
     if (wordInProgress.innerText === word.toUpperCase()) {
         message.classList.add("win");
-        message.innerHTML = '<p class="highlight">You guessed correct the word! Congrats!</p>';
+        message.innerHTML = '<p class="highlight">🍭 You guessed the correct spooky word! 🍭</p>';
         startOver();
     }
 };
