@@ -50,11 +50,11 @@ guessButton.addEventListener("click", function (e) {
 const checkValidity = function (input) {
     const acceptedLetter = /[a-zA-Z]/;
     if (input.length === 0) {
-        message.innerText = "Please enter a letter. 🤡";
+        message.innerHTML = "🤡 Oops. 🤡 <p>Please enter a letter.</p>";
     } else if (input.length > 1) {
-        message.innerText = "Please enter only one letter. 🧛 One, ah ah ah ah.";
+        message.innerHTML = "Please enter only one letter. <p>🧛 One, ah ah ah ah. 🧛</p>";
     } else if (!input.match(acceptedLetter)) {
-        message.innerText = "Please enter a letter from A 👽 to Z 🧟."
+        message.innerHTML = "👽 Oops. 🧟 <p>Please enter a letter from A to Z.</p>"
     } else {
         return input;
     }
@@ -63,7 +63,7 @@ const checkValidity = function (input) {
 const makeGuess = function (letter) {
     letter = letter.toUpperCase();
     if (guessedLetters.includes(letter)) {
-        message.innerText = "You've already guessed that letter. ⚰️"
+        message.innerHTML = "⚰️ Oh no. ⚰️ <p>You've already guessed that letter.</p>"
     } else {
         guessedLetters.push(letter);
         displayLetters();
@@ -100,7 +100,7 @@ const displayWordInProgress = function (guessedLetters) {
 const checkGuessNumber = function (letter) {
     const wordUpper = word.toUpperCase();
     if (wordUpper.includes(letter)) {
-        message.innerText = `You guessed a letter! 🔮`;
+        message.innerHTML = `🔮 Hooray! 🔮 <p>You guessed a letter!</p>`;
     } else {
         message.innerHTML = `🪦 Oops! 🪦 <p>The secret word does not contain that letter.</p>`;
         remainingGuesses = remainingGuesses - 1;
