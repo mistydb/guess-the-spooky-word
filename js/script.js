@@ -118,7 +118,7 @@ const checkGuessNumber = function (letter) {
 const checkIfWon = function () {
     if (wordInProgress.innerText === word.toUpperCase()) {
         message.classList.add("win");
-        message.innerHTML = '<p class="highlight">🍭 You guessed the correct spooky word! 🍭</p>';
+        message.innerHTML = '<p class="highlight">🍭 You guessed the spooky word! 🍭</p>';
         startOver();
     }
 };
