@@ -9,7 +9,7 @@ const wordInProgress = document.querySelector(".word-in-progress");
 // where remaing guesses display
 const guessesRemaining = document.querySelector(".remaining");
 // span for actual number of remaining guesses
-const numGuesses = document.querySelector("span");
+const numGuesses = document.querySelector(".remaining span");
 // message responses after a guessed letter
 const message = document.querySelector(".message");
 // play again button
