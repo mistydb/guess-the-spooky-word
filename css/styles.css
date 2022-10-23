@@ -27,12 +27,16 @@ h1 {
   width: 100%;
   padding-top: 1em;
   margin: 0;
-  font-family: "Unlock", sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 44px;
+  font-size: 5vw;
   text-align: center;
 }
+
+h1 span {
+  background: -webkit-linear-gradient(#5FA621, #440282);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
 
 .container {
   background: radial-gradient(50% 50% at 50% 50%,
@@ -153,8 +157,3 @@ input:focus {
   }
 }
 
-/* @media only screen and (max-width: 768px) {
-  .word-in-progress {
-   font-size: 5vw;
-}
-} */
