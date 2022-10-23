@@ -31,12 +31,10 @@ h1 {
   font-weight: normal;
   font-size: 5vw;
   text-align: center;
-}
-
-h1 span {
   background: -webkit-linear-gradient(#5FA621, #440282);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;}
+  -webkit-text-fill-color: transparent;
+}
 
 .container {
   background: radial-gradient(50% 50% at 50% 50%,
