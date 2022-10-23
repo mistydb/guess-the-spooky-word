@@ -25,15 +25,19 @@ body {
 
 h1 {
   width: 100%;
-  padding-top: 1em;
+  padding: 1em 0 1em 0;
   margin: 0;
-  font-style: normal;
-  font-weight: normal;
   font-size: 5vw;
   text-align: center;
-  background: -webkit-linear-gradient(#5FA621, #440282);
+}
+
+h1 span {
+  background-color: #440282;
+  background: -webkit-linear-gradient(#eee, #440282);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
 }
 
 .container {
